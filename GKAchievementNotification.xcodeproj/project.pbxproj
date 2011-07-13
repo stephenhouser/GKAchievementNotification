@@ -1,0 +1,237 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA642A0513CE48E400AC7E49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA642A0413CE48E400AC7E49 /* Foundation.framework */; };
+		EA642A2113CE49F700AC7E49 /* GKAchievementHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = EA642A1D13CE49F700AC7E49 /* GKAchievementHandler.h */; };
+		EA642A2213CE49F700AC7E49 /* GKAchievementHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EA642A1E13CE49F700AC7E49 /* GKAchievementHandler.m */; };
+		EA642A2313CE49F700AC7E49 /* GKAchievementNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = EA642A1F13CE49F700AC7E49 /* GKAchievementNotification.h */; };
+		EA642A2413CE49F700AC7E49 /* GKAchievementNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = EA642A2013CE49F700AC7E49 /* GKAchievementNotification.m */; };
+		EA642A2613CE4A2700AC7E49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA642A2513CE4A2700AC7E49 /* UIKit.framework */; };
+		EA642A2813CE4A8800AC7E49 /* GKAchievementNotification-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = EA642A2713CE4A8800AC7E49 /* GKAchievementNotification-Prefix.pch */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EA642A0113CE48E400AC7E49 /* libGKAchievementNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGKAchievementNotification.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA642A0413CE48E400AC7E49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA642A1D13CE49F700AC7E49 /* GKAchievementHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKAchievementHandler.h; sourceTree = SOURCE_ROOT; };
+		EA642A1E13CE49F700AC7E49 /* GKAchievementHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKAchievementHandler.m; sourceTree = SOURCE_ROOT; };
+		EA642A1F13CE49F700AC7E49 /* GKAchievementNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKAchievementNotification.h; sourceTree = SOURCE_ROOT; };
+		EA642A2013CE49F700AC7E49 /* GKAchievementNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKAchievementNotification.m; sourceTree = SOURCE_ROOT; };
+		EA642A2513CE4A2700AC7E49 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EA642A2713CE4A8800AC7E49 /* GKAchievementNotification-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GKAchievementNotification-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA6429FE13CE48E400AC7E49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA642A2613CE4A2700AC7E49 /* UIKit.framework in Frameworks */,
+				EA642A0513CE48E400AC7E49 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA6429F613CE48E400AC7E49 = {
+			isa = PBXGroup;
+			children = (
+				EA642A0613CE48E400AC7E49 /* GKAchievementNotification */,
+				EA642A0313CE48E400AC7E49 /* Frameworks */,
+				EA642A0213CE48E400AC7E49 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA642A0213CE48E400AC7E49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A0113CE48E400AC7E49 /* libGKAchievementNotification.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA642A0313CE48E400AC7E49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A2513CE4A2700AC7E49 /* UIKit.framework */,
+				EA642A0413CE48E400AC7E49 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA642A0613CE48E400AC7E49 /* GKAchievementNotification */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A1D13CE49F700AC7E49 /* GKAchievementHandler.h */,
+				EA642A1E13CE49F700AC7E49 /* GKAchievementHandler.m */,
+				EA642A1F13CE49F700AC7E49 /* GKAchievementNotification.h */,
+				EA642A2013CE49F700AC7E49 /* GKAchievementNotification.m */,
+				EA642A0713CE48E400AC7E49 /* Supporting Files */,
+			);
+			path = GKAchievementNotification;
+			sourceTree = "<group>";
+		};
+		EA642A0713CE48E400AC7E49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A2713CE4A8800AC7E49 /* GKAchievementNotification-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EA6429FF13CE48E400AC7E49 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA642A2113CE49F700AC7E49 /* GKAchievementHandler.h in Headers */,
+				EA642A2313CE49F700AC7E49 /* GKAchievementNotification.h in Headers */,
+				EA642A2813CE4A8800AC7E49 /* GKAchievementNotification-Prefix.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EA642A0013CE48E400AC7E49 /* GKAchievementNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA642A0B13CE48E400AC7E49 /* Build configuration list for PBXNativeTarget "GKAchievementNotification" */;
+			buildPhases = (
+				EA6429FD13CE48E400AC7E49 /* Sources */,
+				EA6429FE13CE48E400AC7E49 /* Frameworks */,
+				EA6429FF13CE48E400AC7E49 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GKAchievementNotification;
+			productName = GKAchievementNotification;
+			productReference = EA642A0113CE48E400AC7E49 /* libGKAchievementNotification.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA6429F813CE48E400AC7E49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Codehost, Inc.";
+			};
+			buildConfigurationList = EA6429FB13CE48E400AC7E49 /* Build configuration list for PBXProject "GKAchievementNotification" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EA6429F613CE48E400AC7E49;
+			productRefGroup = EA642A0213CE48E400AC7E49 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA642A0013CE48E400AC7E49 /* GKAchievementNotification */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA6429FD13CE48E400AC7E49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA642A2213CE49F700AC7E49 /* GKAchievementHandler.m in Sources */,
+				EA642A2413CE49F700AC7E49 /* GKAchievementNotification.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EA642A0913CE48E400AC7E49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EA642A0A13CE48E400AC7E49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		EA642A0C13CE48E400AC7E49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/GKAchievementNotification.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GKAchievementNotification-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EA642A0D13CE48E400AC7E49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/GKAchievementNotification.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GKAchievementNotification-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA6429FB13CE48E400AC7E49 /* Build configuration list for PBXProject "GKAchievementNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA642A0913CE48E400AC7E49 /* Debug */,
+				EA642A0A13CE48E400AC7E49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA642A0B13CE48E400AC7E49 /* Build configuration list for PBXNativeTarget "GKAchievementNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA642A0C13CE48E400AC7E49 /* Debug */,
+				EA642A0D13CE48E400AC7E49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA6429F813CE48E400AC7E49 /* Project object */;
+}
