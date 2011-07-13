@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA642A3913CE4B4100AC7E49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA642A3813CE4B4100AC7E49 /* UIKit.framework */; };
+		EA642A3B13CE4B4100AC7E49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA642A3A13CE4B4100AC7E49 /* Foundation.framework */; };
+		EA642A3D13CE4B4100AC7E49 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA642A3C13CE4B4100AC7E49 /* CoreGraphics.framework */; };
+		EA642A4313CE4B4100AC7E49 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EA642A4113CE4B4100AC7E49 /* InfoPlist.strings */; };
+		EA642A4613CE4B4100AC7E49 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA642A4513CE4B4100AC7E49 /* main.m */; };
+		EA642A4913CE4B4100AC7E49 /* GKAchievementTestAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA642A4813CE4B4100AC7E49 /* GKAchievementTestAppDelegate.m */; };
+		EA642A4C13CE4B4100AC7E49 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA642A4A13CE4B4100AC7E49 /* MainWindow.xib */; };
+		EA642A4F13CE4B4100AC7E49 /* GKAchievementTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA642A4E13CE4B4100AC7E49 /* GKAchievementTestViewController.m */; };
+		EA642A5213CE4B4100AC7E49 /* GKAchievementTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA642A5013CE4B4100AC7E49 /* GKAchievementTestViewController.xib */; };
+		EA642A7513CE4BDD00AC7E49 /* libGKAchievementNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA642A7413CE4BDD00AC7E49 /* libGKAchievementNotification.a */; };
+		EA642A7713CE4CEB00AC7E49 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA642A7613CE4CEB00AC7E49 /* GameKit.framework */; };
+		EA642A7F13CE5CC900AC7E49 /* gk-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EA642A7B13CE5CC900AC7E49 /* gk-icon.png */; };
+		EA642A8013CE5CC900AC7E49 /* gk-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA642A7C13CE5CC900AC7E49 /* gk-icon@2x.png */; };
+		EA642A8113CE5CC900AC7E49 /* gk-notification.png in Resources */ = {isa = PBXBuildFile; fileRef = EA642A7D13CE5CC900AC7E49 /* gk-notification.png */; };
+		EA642A8213CE5CC900AC7E49 /* gk-notification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA642A7E13CE5CC900AC7E49 /* gk-notification@2x.png */; };
+		EA642A8413CE605800AC7E49 /* MainWindow-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA642A8313CE605800AC7E49 /* MainWindow-iPhone.xib */; };
+		EA642A8613CE619200AC7E49 /* GKAchievementTestViewController-iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA642A8513CE619100AC7E49 /* GKAchievementTestViewController-iPhone.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA642A5C13CE4B9000AC7E49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA642A5813CE4B9000AC7E49 /* GKAchievementNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EA642A0113CE48E400AC7E49;
+			remoteInfo = GKAchievementNotification;
+		};
+		EA642A7213CE4BD300AC7E49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA642A5813CE4B9000AC7E49 /* GKAchievementNotification.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EA642A0013CE48E400AC7E49;
+			remoteInfo = GKAchievementNotification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EA642A3413CE4B4100AC7E49 /* GKAchievementTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GKAchievementTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA642A3813CE4B4100AC7E49 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EA642A3A13CE4B4100AC7E49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EA642A3C13CE4B4100AC7E49 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EA642A4013CE4B4100AC7E49 /* GKAchievementTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GKAchievementTest-Info.plist"; sourceTree = "<group>"; };
+		EA642A4213CE4B4100AC7E49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EA642A4413CE4B4100AC7E49 /* GKAchievementTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GKAchievementTest-Prefix.pch"; sourceTree = "<group>"; };
+		EA642A4513CE4B4100AC7E49 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA642A4713CE4B4100AC7E49 /* GKAchievementTestAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKAchievementTestAppDelegate.h; sourceTree = "<group>"; };
+		EA642A4813CE4B4100AC7E49 /* GKAchievementTestAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKAchievementTestAppDelegate.m; sourceTree = "<group>"; };
+		EA642A4B13CE4B4100AC7E49 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		EA642A4D13CE4B4100AC7E49 /* GKAchievementTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GKAchievementTestViewController.h; sourceTree = "<group>"; };
+		EA642A4E13CE4B4100AC7E49 /* GKAchievementTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GKAchievementTestViewController.m; sourceTree = "<group>"; };
+		EA642A5113CE4B4100AC7E49 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GKAchievementTestViewController.xib; sourceTree = "<group>"; };
+		EA642A5813CE4B9000AC7E49 /* GKAchievementNotification.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GKAchievementNotification.xcodeproj; path = ../GKAchievementNotification.xcodeproj; sourceTree = "<group>"; };
+		EA642A7413CE4BDD00AC7E49 /* libGKAchievementNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGKAchievementNotification.a; sourceTree = SOURCE_ROOT; };
+		EA642A7613CE4CEB00AC7E49 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		EA642A7B13CE5CC900AC7E49 /* gk-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-icon.png"; sourceTree = "<group>"; };
+		EA642A7C13CE5CC900AC7E49 /* gk-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-icon@2x.png"; sourceTree = "<group>"; };
+		EA642A7D13CE5CC900AC7E49 /* gk-notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-notification.png"; sourceTree = "<group>"; };
+		EA642A7E13CE5CC900AC7E49 /* gk-notification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gk-notification@2x.png"; sourceTree = "<group>"; };
+		EA642A8313CE605800AC7E49 /* MainWindow-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "MainWindow-iPhone.xib"; sourceTree = "<group>"; };
+		EA642A8513CE619100AC7E49 /* GKAchievementTestViewController-iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "GKAchievementTestViewController-iPhone.xib"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA642A3113CE4B4100AC7E49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA642A7513CE4BDD00AC7E49 /* libGKAchievementNotification.a in Frameworks */,
+				EA642A7713CE4CEB00AC7E49 /* GameKit.framework in Frameworks */,
+				EA642A3913CE4B4100AC7E49 /* UIKit.framework in Frameworks */,
+				EA642A3B13CE4B4100AC7E49 /* Foundation.framework in Frameworks */,
+				EA642A3D13CE4B4100AC7E49 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA642A2913CE4B4100AC7E49 = {
+			isa = PBXGroup;
+			children = (
+				EA642A5813CE4B9000AC7E49 /* GKAchievementNotification.xcodeproj */,
+				EA642A3E13CE4B4100AC7E49 /* GKAchievementTest */,
+				EA642A3713CE4B4100AC7E49 /* Frameworks */,
+				EA642A3513CE4B4100AC7E49 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA642A3513CE4B4100AC7E49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A3413CE4B4100AC7E49 /* GKAchievementTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA642A3713CE4B4100AC7E49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A7413CE4BDD00AC7E49 /* libGKAchievementNotification.a */,
+				EA642A7613CE4CEB00AC7E49 /* GameKit.framework */,
+				EA642A3813CE4B4100AC7E49 /* UIKit.framework */,
+				EA642A3A13CE4B4100AC7E49 /* Foundation.framework */,
+				EA642A3C13CE4B4100AC7E49 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA642A3E13CE4B4100AC7E49 /* GKAchievementTest */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A4713CE4B4100AC7E49 /* GKAchievementTestAppDelegate.h */,
+				EA642A4813CE4B4100AC7E49 /* GKAchievementTestAppDelegate.m */,
+				EA642A4A13CE4B4100AC7E49 /* MainWindow.xib */,
+				EA642A8313CE605800AC7E49 /* MainWindow-iPhone.xib */,
+				EA642A4D13CE4B4100AC7E49 /* GKAchievementTestViewController.h */,
+				EA642A4E13CE4B4100AC7E49 /* GKAchievementTestViewController.m */,
+				EA642A8513CE619100AC7E49 /* GKAchievementTestViewController-iPhone.xib */,
+				EA642A5013CE4B4100AC7E49 /* GKAchievementTestViewController.xib */,
+				EA642A7A13CE5CC900AC7E49 /* images */,
+				EA642A3F13CE4B4100AC7E49 /* Supporting Files */,
+			);
+			path = GKAchievementTest;
+			sourceTree = "<group>";
+		};
+		EA642A3F13CE4B4100AC7E49 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A4013CE4B4100AC7E49 /* GKAchievementTest-Info.plist */,
+				EA642A4113CE4B4100AC7E49 /* InfoPlist.strings */,
+				EA642A4413CE4B4100AC7E49 /* GKAchievementTest-Prefix.pch */,
+				EA642A4513CE4B4100AC7E49 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA642A5913CE4B9000AC7E49 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A5D13CE4B9000AC7E49 /* libGKAchievementNotification.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA642A7A13CE5CC900AC7E49 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EA642A7B13CE5CC900AC7E49 /* gk-icon.png */,
+				EA642A7C13CE5CC900AC7E49 /* gk-icon@2x.png */,
+				EA642A7D13CE5CC900AC7E49 /* gk-notification.png */,
+				EA642A7E13CE5CC900AC7E49 /* gk-notification@2x.png */,
+			);
+			name = images;
+			path = ../../images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA642A3313CE4B4100AC7E49 /* GKAchievementTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA642A5513CE4B4100AC7E49 /* Build configuration list for PBXNativeTarget "GKAchievementTest" */;
+			buildPhases = (
+				EA642A3013CE4B4100AC7E49 /* Sources */,
+				EA642A3113CE4B4100AC7E49 /* Frameworks */,
+				EA642A3213CE4B4100AC7E49 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EA642A7313CE4BD300AC7E49 /* PBXTargetDependency */,
+			);
+			name = GKAchievementTest;
+			productName = GKAchievementTest;
+			productReference = EA642A3413CE4B4100AC7E49 /* GKAchievementTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA642A2B13CE4B4100AC7E49 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Catloaf Software, LLC";
+			};
+			buildConfigurationList = EA642A2E13CE4B4100AC7E49 /* Build configuration list for PBXProject "GKAchievementTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EA642A2913CE4B4100AC7E49;
+			productRefGroup = EA642A3513CE4B4100AC7E49 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = EA642A5913CE4B9000AC7E49 /* Products */;
+					ProjectRef = EA642A5813CE4B9000AC7E49 /* GKAchievementNotification.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				EA642A3313CE4B4100AC7E49 /* GKAchievementTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		EA642A5D13CE4B9000AC7E49 /* libGKAchievementNotification.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGKAchievementNotification.a;
+			remoteRef = EA642A5C13CE4B9000AC7E49 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA642A3213CE4B4100AC7E49 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA642A4313CE4B4100AC7E49 /* InfoPlist.strings in Resources */,
+				EA642A4C13CE4B4100AC7E49 /* MainWindow.xib in Resources */,
+				EA642A5213CE4B4100AC7E49 /* GKAchievementTestViewController.xib in Resources */,
+				EA642A7F13CE5CC900AC7E49 /* gk-icon.png in Resources */,
+				EA642A8013CE5CC900AC7E49 /* gk-icon@2x.png in Resources */,
+				EA642A8113CE5CC900AC7E49 /* gk-notification.png in Resources */,
+				EA642A8213CE5CC900AC7E49 /* gk-notification@2x.png in Resources */,
+				EA642A8413CE605800AC7E49 /* MainWindow-iPhone.xib in Resources */,
+				EA642A8613CE619200AC7E49 /* GKAchievementTestViewController-iPhone.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA642A3013CE4B4100AC7E49 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA642A4613CE4B4100AC7E49 /* main.m in Sources */,
+				EA642A4913CE4B4100AC7E49 /* GKAchievementTestAppDelegate.m in Sources */,
+				EA642A4F13CE4B4100AC7E49 /* GKAchievementTestViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA642A7313CE4BD300AC7E49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GKAchievementNotification;
+			targetProxy = EA642A7213CE4BD300AC7E49 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EA642A4113CE4B4100AC7E49 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA642A4213CE4B4100AC7E49 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EA642A4A13CE4B4100AC7E49 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA642A4B13CE4B4100AC7E49 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		EA642A5013CE4B4100AC7E49 /* GKAchievementTestViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA642A5113CE4B4100AC7E49 /* en */,
+			);
+			name = GKAchievementTestViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA642A5313CE4B4100AC7E49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ..;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EA642A5413CE4B4100AC7E49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ..;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EA642A5613CE4B4100AC7E49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GKAchievementTest/GKAchievementTest-Prefix.pch";
+				INFOPLIST_FILE = "GKAchievementTest/GKAchievementTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EA642A5713CE4B4100AC7E49 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GKAchievementTest/GKAchievementTest-Prefix.pch";
+				INFOPLIST_FILE = "GKAchievementTest/GKAchievementTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA642A2E13CE4B4100AC7E49 /* Build configuration list for PBXProject "GKAchievementTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA642A5313CE4B4100AC7E49 /* Debug */,
+				EA642A5413CE4B4100AC7E49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA642A5513CE4B4100AC7E49 /* Build configuration list for PBXNativeTarget "GKAchievementTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA642A5613CE4B4100AC7E49 /* Debug */,
+				EA642A5713CE4B4100AC7E49 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA642A2B13CE4B4100AC7E49 /* Project object */;
+}
