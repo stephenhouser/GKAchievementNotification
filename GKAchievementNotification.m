@@ -67,10 +67,7 @@
 {
     CGRect frame = kGKAchievementDefaultSize;
     self.achievement = achievement;
-    if ((self = [self initWithFrame:frame]))
-    {
-    }
-    return self;
+    return [self initWithFrame:frame];
 }
 
 - (id)initWithTitle:(NSString *)title andMessage:(NSString *)message
@@ -78,10 +75,7 @@
     CGRect frame = kGKAchievementDefaultSize;
     self.title = title;
     self.message = message;
-    if ((self == [self initWithFrame:frame]))
-    {
-    }
-    return self;
+    return [self initWithFrame:frame];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -147,8 +141,9 @@
 
 - (void)dealloc
 {
+#ifdef DEBUG
     NSLog(@"dealloc: GKAchievementNotification");
-    
+#endif
     self.handlerDelegate = nil;
     self.logo = nil;
     
@@ -196,8 +191,8 @@
     {
         if (!self.logo)
         {
-            UIImageView *tLogo = [[UIImageView alloc] initWithFrame:CGRectMake(7.0f, 6.0f, 34.0f, 34.0f)];
-            tLogo.contentMode = UIViewContentModeCenter;
+            UIImageView *tLogo = [[UIImageView alloc] initWithFrame:CGRectMake(7.0f, 6.0f, kGKAchievementImageSize, kGKAchievementImageSize)];
+            tLogo.contentMode = UIViewContentModeScaleAspectFit;
             self.logo = tLogo;
             [tLogo release];
             [self addSubview:self.logo];
