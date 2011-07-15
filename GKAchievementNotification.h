@@ -13,19 +13,13 @@
 #define kGKAchievementAnimeTime     0.4f
 #define kGKAchievementDisplayTime   1.75f
 
-#define kGKAchievementFrameWidth    284.0f 
+#define kGKAchievementBarWidthRatio 0.88f
+
 #define kGKAchievementFrameHeight   52.0f
 #define kGKAchievementTextHeight    22.0f
 #define kGKAchievementImageSize     34.0f
 
-#define kGKAchievementDefaultSize   CGRectMake(0.0f, 0.0f, kGKAchievementFrameWidth, kGKAchievementFrameHeight)
-#define kGKAchievementFrameStart    CGRectMake(18.0f, -53.0f, kGKAchievementFrameWidth, kGKAchievementFrameHeight)
-#define kGKAchievementFrameEnd      CGRectMake(18.0f, 10.0f, kGKAchievementFrameWidth, kGKAchievementFrameHeight)
-
-#define kGKAchievementText1         CGRectMake(10.0f, 6.0f, 264.0f, kGKAchievementTextHeight)
-#define kGKAchievementText2         CGRectMake(10.0f, 20.0f, 264.0f, kGKAchievementTextHeight)
-#define kGKAchievementText1WLogo    CGRectMake(10.0f + kGKAchievementImageSize, 6.0f, 229.0f, kGKAchievementTextHeight)
-#define kGKAchievementText2WLogo    CGRectMake(10.0f + kGKAchievementImageSize, 20.0f, 229.0f, kGKAchievementTextHeight)
+#define kGKAchievementMoveOffset    (kGKAchievementFrameHeight + 11.0f)
 
 #pragma mark -
 
@@ -133,5 +127,22 @@
  * @param image  The image to display.
  */
 - (void)setImage:(UIImage *)image;
+
+#pragma mark - Compute the geometry of the notification
+
+/*
+ * The size of the rectangle holding the notification, depending on device.
+ */
+- (CGRect)defaultSize;
+
+/**
+ * Compute the frame at the start of animations, taking into account device and orientation.
+ */
+- (CGRect)startFrame;
+
+/*
+ * Compute the frame at the end of animations.
+ */
+- (CGRect)endFrame;
 
 @end

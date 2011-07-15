@@ -17,6 +17,10 @@
 - (void)animationOutDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
 - (void)delegateCallback:(SEL)selector withObject:(id)object;
 
+- (CGRect)text1FrameWithLogo:(BOOL)logo;
+- (CGRect)text2FrameWithLogo:(BOOL)logo;
+- (void)setRotation;
+
 @end
 
 #pragma mark -
@@ -46,6 +50,43 @@
     }
 }
 
+- (CGRect)text1FrameWithLogo:(BOOL)logo
+{
+    if (logo) {
+        return CGRectMake(10.0f + kGKAchievementImageSize, 6.0f, self.bounds.size.width - 55.0f, kGKAchievementTextHeight);
+    } else {
+        return CGRectMake(10.0f, 6.0f, self.bounds.size.width - 20.0f, kGKAchievementTextHeight);
+    }
+}
+
+- (CGRect)text2FrameWithLogo:(BOOL)logo
+{
+    if (logo) {
+        return CGRectMake(10.0f + kGKAchievementImageSize, 20.0f, self.bounds.size.width - 55.0f, kGKAchievementTextHeight);
+    } else {
+        return CGRectMake(10.0f, 20.0f, self.bounds.size.width - 20.0f, kGKAchievementTextHeight);
+    }
+}
+
+- (void)setRotation
+{
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    switch (orientation) {
+        case UIInterfaceOrientationPortrait:
+            self.transform = CGAffineTransformIdentity;
+            break;
+        case UIInterfaceOrientationPortraitUpsideDown:
+            self.transform = CGAffineTransformMakeRotation(M_PI);
+            break;
+        case UIInterfaceOrientationLandscapeRight:
+            self.transform = CGAffineTransformMakeRotation(M_PI_2);
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+            self.transform = CGAffineTransformMakeRotation(M_PI_2 + M_PI);
+            break;
+    }
+}
+
 @end
 
 #pragma mark -
@@ -65,14 +106,14 @@
 
 - (id)initWithAchievementDescription:(GKAchievementDescription *)achievement
 {
-    CGRect frame = kGKAchievementDefaultSize;
+    CGRect frame = [self defaultSize];
     self.achievement = achievement;
     return [self initWithFrame:frame];
 }
 
 - (id)initWithTitle:(NSString *)title andMessage:(NSString *)message
 {
-    CGRect frame = kGKAchievementDefaultSize;
+    CGRect frame = [self defaultSize];
     self.title = title;
     self.message = message;
     return [self initWithFrame:frame];
@@ -91,9 +132,11 @@
         self.opaque = NO;
         [tBackground release];
         [self addSubview:self.background];
+        
+        [self setRotation];
 
-        CGRect r1 = kGKAchievementText1;
-        CGRect r2 = kGKAchievementText2;
+        CGRect r1 = [self text1FrameWithLogo:NO];
+        CGRect r2 = [self text2FrameWithLogo:NO];
 
         // create the text label
         UILabel *tTextLabel = [[UILabel alloc] initWithFrame:r1];
@@ -101,7 +144,7 @@
         tTextLabel.backgroundColor = [UIColor clearColor];
         tTextLabel.textColor = [UIColor whiteColor];
         tTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0f];
-        tTextLabel.text = NSLocalizedString(@"Achievement Unlocked", @"Achievemnt Unlocked Message");
+        tTextLabel.text = NSLocalizedString(@"Achievement Unlocked", @"Achievement Unlocked Message");
         self.textLabel = tTextLabel;
         [tTextLabel release];
 
@@ -141,9 +184,6 @@
 
 - (void)dealloc
 {
-#ifdef DEBUG
-    NSLog(@"dealloc: GKAchievementNotification");
-#endif
     self.handlerDelegate = nil;
     self.logo = nil;
     
@@ -158,6 +198,72 @@
     [super dealloc];
 }
 
+#pragma mark - Geometry
+
+- (CGRect)defaultSize
+{
+    CGRect frame = [UIApplication sharedApplication].statusBarFrame;
+    if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        return CGRectMake(0.0f, 0.0f,
+                          frame.size.height * kGKAchievementBarWidthRatio, 
+                          kGKAchievementFrameHeight);        
+    } else {
+        return CGRectMake(0.0f, 0.0f,
+                          frame.size.width * kGKAchievementBarWidthRatio, 
+                          kGKAchievementFrameHeight);
+    }
+}
+
+- (CGRect)startFrame
+{
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    UIWindow *rootWindow = [[UIApplication sharedApplication].windows objectAtIndex:0];
+    CGRect frame = rootWindow.frame;
+ 
+    switch (orientation) {
+        case UIInterfaceOrientationPortrait:
+            return CGRectMake(frame.size.width * (1.0f - kGKAchievementBarWidthRatio)/2.0f,
+                              -kGKAchievementFrameHeight-1.0f, 
+                              frame.size.width * kGKAchievementBarWidthRatio, kGKAchievementFrameHeight);
+        case UIInterfaceOrientationPortraitUpsideDown:
+            return CGRectMake(frame.size.width * (1.0f - kGKAchievementBarWidthRatio)/2.0f,
+                              frame.size.height + kGKAchievementFrameHeight + 1.0f, 
+                              frame.size.width * kGKAchievementBarWidthRatio, kGKAchievementFrameHeight);
+        case UIInterfaceOrientationLandscapeLeft:
+            return CGRectMake(-kGKAchievementFrameHeight-1.0f, 
+                              frame.size.height * (1.0f - kGKAchievementBarWidthRatio)/2.0f,
+                              kGKAchievementFrameHeight, frame.size.height * kGKAchievementBarWidthRatio);
+        case UIInterfaceOrientationLandscapeRight:
+            return CGRectMake(frame.size.width + kGKAchievementFrameHeight + 1.0f, 
+                              frame.size.height * (1.0f - kGKAchievementBarWidthRatio)/2.0f,
+                              kGKAchievementFrameHeight, frame.size.height * kGKAchievementBarWidthRatio);
+    }
+}
+
+- (CGRect)endFrame
+{
+    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+    CGRect frame = [self startFrame];
+    switch (orientation) {
+        case UIInterfaceOrientationPortrait:
+            frame.origin.y += kGKAchievementMoveOffset + [UIApplication sharedApplication].statusBarFrame.size.height;
+            break;
+            
+        case UIInterfaceOrientationPortraitUpsideDown:
+            frame.origin.y -= kGKAchievementMoveOffset + [UIApplication sharedApplication].statusBarFrame.size.height + kGKAchievementFrameHeight;
+            break;
+            
+        case UIInterfaceOrientationLandscapeLeft:
+            frame.origin.x += kGKAchievementMoveOffset + [UIApplication sharedApplication].statusBarFrame.size.width;
+            break;
+            
+        case UIInterfaceOrientationLandscapeRight:
+            frame.origin.x -= kGKAchievementMoveOffset + [UIApplication sharedApplication].statusBarFrame.size.width + kGKAchievementFrameHeight;
+            break;
+    }
+    return frame;
+}
+
 
 #pragma mark -
 
@@ -169,7 +275,7 @@
     [UIView setAnimationDelegate:self];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDidStopSelector:@selector(animationInDidStop:finished:context:)];
-    self.frame = kGKAchievementFrameEnd;
+    self.frame = [self endFrame];
     [UIView commitAnimations];
 }
 
@@ -181,7 +287,7 @@
     [UIView setAnimationDelegate:self];
     [UIView setAnimationBeginsFromCurrentState:YES];
     [UIView setAnimationDidStopSelector:@selector(animationOutDidStop:finished:context:)];
-    self.frame = kGKAchievementFrameStart;
+    self.frame = [self startFrame];
     [UIView commitAnimations];
 }
 
@@ -198,8 +304,8 @@
             [self addSubview:self.logo];
         }
         self.logo.image = image;
-        self.textLabel.frame = kGKAchievementText1WLogo;
-        self.detailLabel.frame = kGKAchievementText2WLogo;
+        self.textLabel.frame = [self text1FrameWithLogo:YES];
+        self.detailLabel.frame = [self text2FrameWithLogo:YES];
     }
     else
     {
@@ -207,8 +313,8 @@
         {
             [self.logo removeFromSuperview];
         }
-        self.textLabel.frame = kGKAchievementText1;
-        self.detailLabel.frame = kGKAchievementText2;
+        self.textLabel.frame = [self text1FrameWithLogo:NO];
+        self.detailLabel.frame = [self text2FrameWithLogo:NO];
     }
 }
 

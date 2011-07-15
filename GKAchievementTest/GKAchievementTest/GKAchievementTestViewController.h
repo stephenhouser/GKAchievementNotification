@@ -13,5 +13,6 @@
 }
 
 - (IBAction)showNotification;
+- (IBAction)hideBar:(id)sender;
 
 @end

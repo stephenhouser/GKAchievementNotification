@@ -45,6 +45,17 @@
     }
     [[GKAchievementHandler defaultHandler] notifyAchievementTitle:@"Notification"
                                                        andMessage:msg];
+    
+    // Some debug info
+    CGRect frame = [UIApplication sharedApplication].statusBarFrame;
+    NSLog(@"Status bar frame: (%f,%f) w=%f h=%f", frame.origin.x, frame.origin.y, frame.size.width, frame.size.height);
+}
+
+- (IBAction)hideBar:(id)sender
+{
+    UIApplication *app = [UIApplication sharedApplication];
+    
+    [app setStatusBarHidden:!app.statusBarHidden withAnimation:YES];
 }
 
 
