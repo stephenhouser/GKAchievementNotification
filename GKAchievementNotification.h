@@ -13,7 +13,8 @@
 #define kGKAchievementAnimeTime     0.4f
 #define kGKAchievementDisplayTime   1.75f
 
-#define kGKAchievementBarWidthRatio 0.88f
+#define kGKAchievementBarWidthRatioPhone 0.88f
+#define kGKAchievementBarWidthRatioPad   0.60f
 
 #define kGKAchievementFrameHeight   52.0f
 #define kGKAchievementTextHeight    22.0f
@@ -75,6 +76,8 @@
     UILabel      *_textLabel;    /**< Text label used to display achievement title. */
     UILabel      *_detailLabel;  /**< Text label used to display achievement description. */
 
+    CGFloat _barWidthRatio; /**< What percentage of the width of the status bar we use for the notification. */
+    
     id<GKAchievementHandlerDelegate> _handlerDelegate;  /**< Reference to nofification handler. */
 }
 

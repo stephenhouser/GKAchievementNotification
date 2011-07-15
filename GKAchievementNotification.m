@@ -133,6 +133,16 @@
         [tBackground release];
         [self addSubview:self.background];
         
+        if ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)]) {
+            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                _barWidthRatio = kGKAchievementBarWidthRatioPad;
+            } else {
+                _barWidthRatio = kGKAchievementBarWidthRatioPhone;
+            }
+        } else { // iPhone/iPod touch only - pre iOS 3.2
+            _barWidthRatio = kGKAchievementBarWidthRatioPhone;
+        }
+        
         [self setRotation];
 
         CGRect r1 = [self text1FrameWithLogo:NO];
@@ -205,11 +215,11 @@
     CGRect frame = [UIApplication sharedApplication].statusBarFrame;
     if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
         return CGRectMake(0.0f, 0.0f,
-                          frame.size.height * kGKAchievementBarWidthRatio, 
+                          frame.size.height * _barWidthRatio, 
                           kGKAchievementFrameHeight);        
     } else {
         return CGRectMake(0.0f, 0.0f,
-                          frame.size.width * kGKAchievementBarWidthRatio, 
+                          frame.size.width * _barWidthRatio, 
                           kGKAchievementFrameHeight);
     }
 }
@@ -222,21 +232,21 @@
  
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
-            return CGRectMake(frame.size.width * (1.0f - kGKAchievementBarWidthRatio)/2.0f,
+            return CGRectMake(frame.size.width * (1.0f - _barWidthRatio)/2.0f,
                               -kGKAchievementFrameHeight-1.0f, 
-                              frame.size.width * kGKAchievementBarWidthRatio, kGKAchievementFrameHeight);
+                              frame.size.width * _barWidthRatio, kGKAchievementFrameHeight);
         case UIInterfaceOrientationPortraitUpsideDown:
-            return CGRectMake(frame.size.width * (1.0f - kGKAchievementBarWidthRatio)/2.0f,
+            return CGRectMake(frame.size.width * (1.0f - _barWidthRatio)/2.0f,
                               frame.size.height + kGKAchievementFrameHeight + 1.0f, 
-                              frame.size.width * kGKAchievementBarWidthRatio, kGKAchievementFrameHeight);
+                              frame.size.width * _barWidthRatio, kGKAchievementFrameHeight);
         case UIInterfaceOrientationLandscapeLeft:
             return CGRectMake(-kGKAchievementFrameHeight-1.0f, 
-                              frame.size.height * (1.0f - kGKAchievementBarWidthRatio)/2.0f,
-                              kGKAchievementFrameHeight, frame.size.height * kGKAchievementBarWidthRatio);
+                              frame.size.height * (1.0f - _barWidthRatio)/2.0f,
+                              kGKAchievementFrameHeight, frame.size.height * _barWidthRatio);
         case UIInterfaceOrientationLandscapeRight:
             return CGRectMake(frame.size.width + kGKAchievementFrameHeight + 1.0f, 
-                              frame.size.height * (1.0f - kGKAchievementBarWidthRatio)/2.0f,
-                              kGKAchievementFrameHeight, frame.size.height * kGKAchievementBarWidthRatio);
+                              frame.size.height * (1.0f - _barWidthRatio)/2.0f,
+                              kGKAchievementFrameHeight, frame.size.height * _barWidthRatio);
     }
 }
 
