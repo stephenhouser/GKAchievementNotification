@@ -27,14 +27,6 @@ static GKAchievementHandler *defaultHandler = nil;
 
 - (void)displayNotification:(GKAchievementNotification *)notification
 {
-    if (self.image != nil)
-    {
-        [notification setImage:self.image];
-    }
-    else
-    {
-        [notification setImage:nil];
-    }
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
     if ([GKNotificationBanner class]) {
         [GKNotificationBanner showBannerWithTitle:notification.title 
@@ -57,8 +49,6 @@ static GKAchievementHandler *defaultHandler = nil;
 
 @implementation GKAchievementHandler
 
-@synthesize image=_image;
-
 #pragma mark -
 
 + (GKAchievementHandler *)defaultHandler
@@ -74,7 +64,6 @@ static GKAchievementHandler *defaultHandler = nil;
     {
         _topView = [[UIApplication sharedApplication] keyWindow];
         _queue = [[NSMutableArray alloc] initWithCapacity:0];
-        self.image = [UIImage imageNamed:@"gk-icon.png"];
     }
     return self;
 }
@@ -82,7 +71,6 @@ static GKAchievementHandler *defaultHandler = nil;
 - (void)dealloc
 {
     [_queue release];
-    [_image release];
     [super dealloc];
 }
 
@@ -90,12 +78,18 @@ static GKAchievementHandler *defaultHandler = nil;
 
 - (void)notifyAchievement:(GKAchievementDescription *)achievement
 {
+    [self notifyAchievement:achievement withImage:[UIImage imageNamed:@"gk-icon.png"]];
+}
+
+- (void)notifyAchievement:(GKAchievementDescription *)achievement withImage:(UIImage *)image;
+{
     GKAchievementNotification *notification = [[[GKAchievementNotification alloc] initWithAchievementDescription:achievement] autorelease];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
     if ([GKNotificationBanner class] == nil) {
 #endif
         notification.frame = [notification startFrame];
         notification.handlerDelegate = self;
+        [notification setImage:image];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
     }
 #endif
@@ -109,12 +103,18 @@ static GKAchievementHandler *defaultHandler = nil;
 
 - (void)notifyAchievementTitle:(NSString *)title andMessage:(NSString *)message
 {
+    [self notifyAchievementTitle:title message:message andImage:[UIImage imageNamed:@"gk-icon.png"]];
+}
+
+- (void)notifyAchievementTitle:(NSString *)title message:(NSString *)message andImage:(UIImage *)image;
+{
     GKAchievementNotification *notification = [[[GKAchievementNotification alloc] initWithTitle:title andMessage:message] autorelease];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
     if ([GKNotificationBanner class] == nil) {
 #endif
         notification.frame = [notification startFrame];
         notification.handlerDelegate = self;
+        [notification setImage:image];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
     }
 #endif
