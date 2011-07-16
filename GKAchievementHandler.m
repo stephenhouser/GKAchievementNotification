@@ -7,6 +7,7 @@
 //
 
 #import <GameKit/GameKit.h>
+#import <Availability.h>
 #import "GKAchievementHandler.h"
 #import "GKAchievementNotification.h"
 
@@ -34,8 +35,20 @@ static GKAchievementHandler *defaultHandler = nil;
     {
         [notification setImage:nil];
     }
-    [_topView addSubview:notification];
-    [notification animateIn];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+    if ([GKNotificationBanner class]) {
+        [GKNotificationBanner showBannerWithTitle:notification.title 
+                                          message:notification.message
+                                completionHandler:^{
+                                    [self didHideAchievementNotification:notification];
+                                }
+         ];
+    } else
+#endif
+    {
+        [_topView addSubview:notification];
+        [notification animateIn];
+    }
 }
 
 @end
@@ -78,8 +91,14 @@ static GKAchievementHandler *defaultHandler = nil;
 - (void)notifyAchievement:(GKAchievementDescription *)achievement
 {
     GKAchievementNotification *notification = [[[GKAchievementNotification alloc] initWithAchievementDescription:achievement] autorelease];
-    notification.frame = [notification startFrame];
-    notification.handlerDelegate = self;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+    if ([GKNotificationBanner class] == nil) {
+#endif
+        notification.frame = [notification startFrame];
+        notification.handlerDelegate = self;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+    }
+#endif
 
     [_queue addObject:notification];
     if ([_queue count] == 1)
@@ -91,9 +110,15 @@ static GKAchievementHandler *defaultHandler = nil;
 - (void)notifyAchievementTitle:(NSString *)title andMessage:(NSString *)message
 {
     GKAchievementNotification *notification = [[[GKAchievementNotification alloc] initWithTitle:title andMessage:message] autorelease];
-    notification.frame = [notification startFrame];
-    notification.handlerDelegate = self;
-
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+    if ([GKNotificationBanner class] == nil) {
+#endif
+        notification.frame = [notification startFrame];
+        notification.handlerDelegate = self;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+    }
+#endif
+    
     [_queue addObject:notification];
     if ([_queue count] == 1)
     {

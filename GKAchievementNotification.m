@@ -123,6 +123,9 @@
 {
     if ((self = [super initWithFrame:frame]))
     {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+        if ([GKNotificationBanner class] == nil) {
+#endif
         // create the GK background
         UIImage *backgroundStretch = [[UIImage imageNamed:@"gk-notification.png"] stretchableImageWithLeftCapWidth:8.0f topCapHeight:0.0f];
         UIImageView *tBackground = [[UIImageView alloc] initWithFrame:frame];
@@ -169,10 +172,13 @@
         self.detailLabel = tDetailLabel;
         [tDetailLabel release];
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+        }
+#endif
         if (self.achievement)
         {
-            self.textLabel.text = self.achievement.title;
-            self.detailLabel.text = self.achievement.achievedDescription;
+            self.textLabel.text = self.title = self.achievement.title;
+            self.detailLabel.text = self.title = self.achievement.achievedDescription;
         }
         else
         {
@@ -186,8 +192,14 @@
             }
         }
 
-        [self addSubview:self.textLabel];
-        [self addSubview:self.detailLabel];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+        if ([GKNotificationBanner class] == nil) {
+#endif
+            [self addSubview:self.textLabel];
+            [self addSubview:self.detailLabel];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+        }
+#endif
     }
     return self;
 }
