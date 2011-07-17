@@ -178,7 +178,7 @@
         if (self.achievement)
         {
             self.textLabel.text = self.title = self.achievement.title;
-            self.detailLabel.text = self.title = self.achievement.achievedDescription;
+            self.detailLabel.text = self.message = self.achievement.achievedDescription;
         }
         else
         {
