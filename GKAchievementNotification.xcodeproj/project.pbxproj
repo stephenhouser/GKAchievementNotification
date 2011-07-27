@@ -12,7 +12,6 @@
 		EA642A2213CE49F700AC7E49 /* GKAchievementHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = EA642A1E13CE49F700AC7E49 /* GKAchievementHandler.m */; };
 		EA642A2313CE49F700AC7E49 /* GKAchievementNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = EA642A1F13CE49F700AC7E49 /* GKAchievementNotification.h */; };
 		EA642A2413CE49F700AC7E49 /* GKAchievementNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = EA642A2013CE49F700AC7E49 /* GKAchievementNotification.m */; };
-		EA642A2613CE4A2700AC7E49 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA642A2513CE4A2700AC7E49 /* UIKit.framework */; };
 		EA642A2813CE4A8800AC7E49 /* GKAchievementNotification-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = EA642A2713CE4A8800AC7E49 /* GKAchievementNotification-Prefix.pch */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +31,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA642A2613CE4A2700AC7E49 /* UIKit.framework in Frameworks */,
 				EA642A0513CE48E400AC7E49 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +123,7 @@
 		EA6429F813CE48E400AC7E49 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Codehost, Inc.";
 			};
 			buildConfigurationList = EA6429FB13CE48E400AC7E49 /* Build configuration list for PBXProject "GKAchievementNotification" */;
@@ -168,7 +167,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -181,7 +180,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -193,9 +192,11 @@
 				DSTROOT = /tmp/GKAchievementNotification.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GKAchievementNotification-Prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -206,11 +207,41 @@
 				DSTROOT = /tmp/GKAchievementNotification.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GKAchievementNotification-Prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		EAFBFA2F13E0064800FA744B /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				SDKROOT = iphoneos;
+			};
+			name = Distribution;
+		};
+		EAFBFA3013E0064800FA744B /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/GKAchievementNotification.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GKAchievementNotification-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Distribution;
 		};
 /* End XCBuildConfiguration section */
 
@@ -220,18 +251,20 @@
 			buildConfigurations = (
 				EA642A0913CE48E400AC7E49 /* Debug */,
 				EA642A0A13CE48E400AC7E49 /* Release */,
+				EAFBFA2F13E0064800FA744B /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Distribution;
 		};
 		EA642A0B13CE48E400AC7E49 /* Build configuration list for PBXNativeTarget "GKAchievementNotification" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA642A0C13CE48E400AC7E49 /* Debug */,
 				EA642A0D13CE48E400AC7E49 /* Release */,
+				EAFBFA3013E0064800FA744B /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Distribution;
 		};
 /* End XCConfigurationList section */
 	};
