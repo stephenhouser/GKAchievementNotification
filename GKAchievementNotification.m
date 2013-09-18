@@ -127,7 +127,7 @@
         if ([GKNotificationBanner class] == nil) {
 #endif
         // create the GK background
-        UIImage *backgroundStretch = [[UIImage imageNamed:@"gk-notification.png"] stretchableImageWithLeftCapWidth:8.0f topCapHeight:0.0f];
+        UIImage *backgroundStretch = [[UIImage imageNamed:@"gk-notification"] stretchableImageWithLeftCapWidth:8.0f topCapHeight:0.0f];
         UIImageView *tBackground = [[UIImageView alloc] initWithFrame:frame];
         tBackground.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         tBackground.image = backgroundStretch;

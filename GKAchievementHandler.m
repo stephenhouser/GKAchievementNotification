@@ -78,7 +78,7 @@ static GKAchievementHandler *defaultHandler = nil;
 
 - (void)notifyAchievement:(GKAchievementDescription *)achievement
 {
-    [self notifyAchievement:achievement withImage:[UIImage imageNamed:@"gk-icon.png"]];
+    [self notifyAchievement:achievement withImage:[UIImage imageNamed:@"gk-icon"]];
 }
 
 - (void)notifyAchievement:(GKAchievementDescription *)achievement withImage:(UIImage *)image;

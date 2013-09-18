@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA3F880117EA4D3600BE7161 /* GKAchievementNotification.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GKAchievementNotification.xcassets; sourceTree = SOURCE_ROOT; };
 		EA642A0113CE48E400AC7E49 /* libGKAchievementNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGKAchievementNotification.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA642A0413CE48E400AC7E49 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA642A1D13CE49F700AC7E49 /* GKAchievementHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKAchievementHandler.h; sourceTree = SOURCE_ROOT; };
@@ -71,6 +72,7 @@
 				EA642A1E13CE49F700AC7E49 /* GKAchievementHandler.m */,
 				EA642A1F13CE49F700AC7E49 /* GKAchievementNotification.h */,
 				EA642A2013CE49F700AC7E49 /* GKAchievementNotification.m */,
+				EA3F880117EA4D3600BE7161 /* GKAchievementNotification.xcassets */,
 				EA642A0713CE48E400AC7E49 /* Supporting Files */,
 			);
 			path = GKAchievementNotification;
