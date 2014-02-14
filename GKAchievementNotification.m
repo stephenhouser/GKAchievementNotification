@@ -41,6 +41,10 @@
 
 - (void)delegateCallback:(SEL)selector withObject:(id)object
 {
+// Suppures warning about non-retained return value from ARC.
+// http://stackoverflow.com/questions/7017281/performselector-may-cause-a-leak-because-its-selector-is-unknown
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
     if (self.handlerDelegate)
     {
         if ([self.handlerDelegate respondsToSelector:selector])
@@ -48,6 +52,7 @@
             [self.handlerDelegate performSelector:selector withObject:object];
         }
     }
+#pragma clang diagnostic pop
 }
 
 - (CGRect)text1FrameWithLogo:(BOOL)logo
@@ -133,7 +138,6 @@
         tBackground.image = backgroundStretch;
         self.background = tBackground;
         self.opaque = NO;
-        [tBackground release];
         [self addSubview:self.background];
         
         if ([[UIDevice currentDevice] respondsToSelector:@selector(userInterfaceIdiom)]) {
@@ -153,24 +157,23 @@
 
         // create the text label
         UILabel *tTextLabel = [[UILabel alloc] initWithFrame:r1];
-        tTextLabel.textAlignment = UITextAlignmentCenter;
+        tTextLabel.textAlignment = NSTextAlignmentCenter;
         tTextLabel.backgroundColor = [UIColor clearColor];
         tTextLabel.textColor = [UIColor whiteColor];
         tTextLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:15.0f];
         tTextLabel.text = NSLocalizedString(@"Achievement Unlocked", @"Achievement Unlocked Message");
         self.textLabel = tTextLabel;
-        [tTextLabel release];
 
         // detail label
         UILabel *tDetailLabel = [[UILabel alloc] initWithFrame:r2];
-        tDetailLabel.textAlignment = UITextAlignmentCenter;
+        tDetailLabel.textAlignment = NSTextAlignmentCenter;
         tDetailLabel.adjustsFontSizeToFitWidth = YES;
-        tDetailLabel.minimumFontSize = 10.0f;
+        // TODO: Research what minimimScaleFactor should be to replace minimumFontSize of 10.0
+        //tDetailLabel.minimumFontSize = 10.0f;
         tDetailLabel.backgroundColor = [UIColor clearColor];
         tDetailLabel.textColor = [UIColor whiteColor];
         tDetailLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:11.0f];
         self.detailLabel = tDetailLabel;
-        [tDetailLabel release];
 
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
         }
@@ -204,21 +207,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    self.handlerDelegate = nil;
-    self.logo = nil;
-    
-    [_achievement release];
-    [_background release];
-    [_detailLabel release];
-    [_logo release];
-    [_message release];
-    [_textLabel release];
-    [_title release];
-    
-    [super dealloc];
-}
 
 #pragma mark - Geometry
 
@@ -322,7 +310,6 @@
             UIImageView *tLogo = [[UIImageView alloc] initWithFrame:CGRectMake(7.0f, 6.0f, kGKAchievementImageSize, kGKAchievementImageSize)];
             tLogo.contentMode = UIViewContentModeScaleAspectFit;
             self.logo = tLogo;
-            [tLogo release];
             [self addSubview:self.logo];
         }
         self.logo.image = image;

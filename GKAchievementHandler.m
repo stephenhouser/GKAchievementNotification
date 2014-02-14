@@ -68,11 +68,6 @@ static GKAchievementHandler *defaultHandler = nil;
     return self;
 }
 
-- (void)dealloc
-{
-    [_queue release];
-    [super dealloc];
-}
 
 #pragma mark -
 
@@ -83,7 +78,7 @@ static GKAchievementHandler *defaultHandler = nil;
 
 - (void)notifyAchievement:(GKAchievementDescription *)achievement withImage:(UIImage *)image;
 {
-    GKAchievementNotification *notification = [[[GKAchievementNotification alloc] initWithAchievementDescription:achievement] autorelease];
+    GKAchievementNotification *notification = [[GKAchievementNotification alloc] initWithAchievementDescription:achievement];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
     if ([GKNotificationBanner class] == nil) {
 #endif
@@ -108,7 +103,7 @@ static GKAchievementHandler *defaultHandler = nil;
 
 - (void)notifyAchievementTitle:(NSString *)title message:(NSString *)message andImage:(UIImage *)image;
 {
-    GKAchievementNotification *notification = [[[GKAchievementNotification alloc] initWithTitle:title andMessage:message] autorelease];
+    GKAchievementNotification *notification = [[GKAchievementNotification alloc] initWithTitle:title andMessage:message];
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
     if ([GKNotificationBanner class] == nil) {
 #endif
